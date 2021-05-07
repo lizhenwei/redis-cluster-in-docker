@@ -12,4 +12,4 @@ for((i=1;i<=$#;i++)); do
     output="${output} $j "
 done
 echo ${output}
-docker exec -it redis-cluster-1 redis-cli -a 92F1q99f9CnrkAuwJPItdj8brqeMtN3r --cluster create ${output} --cluster-replicas 1
+docker exec -it redis-cluster-1 redis-cli -a password --cluster create ${output} --cluster-replicas 1
