@@ -1,5 +1,5 @@
 # redis-cluster集群docker版
-<em>因为配置里的cluster-announce-ip不能用域名,只能用ip，在K8S里IP经常变，所以不能用K8S部署了</em>
+<em>本代码是在3台机器上，每个机器上启动2个redis实例的环形集群</em>
 
 ## 前提：
 机器上安装了docker和docker-compose
