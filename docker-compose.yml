@@ -1,0 +1,22 @@
+version: "3.5"
+services:
+    redis-cluster1:
+        image: redis:5.0
+        volumes:
+            - ./conf/redis1.conf:/usr/local/etc/redis/redis.conf
+            - ./redis-data1:/data
+        command: >
+            bash -c "redis-server /usr/local/etc/redis/redis.conf"
+        network_mode: "host"
+        restart: always
+        container_name: redis-cluster-1
+    redis-cluster2:
+        image: redis:5.0
+        volumes:
+            - ./conf/redis2.conf:/usr/local/etc/redis/redis.conf
+            - ./redis-data2:/data
+        command: >
+            bash -c "redis-server /usr/local/etc/redis/redis.conf"
+        network_mode: "host"
+        restart: always
+        container_name: redis-cluster-2
