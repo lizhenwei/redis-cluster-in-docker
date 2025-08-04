@@ -22,7 +22,7 @@ bash redis-init.sh 192.168.0.94 192.168.0.95 192.168.0.96
 #进入redis容器
 docker exec -it redis-cluster bash
 #检查集群是否运行成功
-redis-cli -a 92F1q99f9CnrkAuwJPItdj8brqeMtN3r -p 7000 cluster nodes
+redis-cli -a redispassword -p 7000 cluster nodes
 ```
 
 ## 3台机器默认无高可用功能，仅供测试代码与redis-cluster的兼容性
@@ -47,7 +47,7 @@ $ pip install redis-py-cluster
 
 >>> # Requires at least one node for cluster discovery. Multiple nodes is recommended.
 >>> startup_nodes = [{"host": "192.168.0.94", "port": "7000"}, {"host": "192.168.0.94", "port": "7001"},{"host": "192.168.0.95", "port": "7000"}, {"host": "192.168.0.95", "port": "7001"},{"host": "192.168.0.96", "port": "7000"}, {"host": "192.168.0.96", "port": "7001"}]
->>> rc = RedisCluster(startup_nodes=startup_nodes, decode_responses=True,password='92F1q99f9CnrkAuwJPItdj8brqeMtN3r')
+>>> rc = RedisCluster(startup_nodes=startup_nodes, decode_responses=True,password='redispassword')
 
 >>> rc.set("foo", "bar")
 True
